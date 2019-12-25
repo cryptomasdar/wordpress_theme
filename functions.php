@@ -1,5 +1,8 @@
 <?php 
 
+/*
+ * Loading Styles
+ * */
 
 function load_css(  )	// Loading bootstrap Styles
 { 
@@ -8,9 +11,15 @@ function load_css(  )	// Loading bootstrap Styles
 	 wp_register_style function accepte these arguments name, url, dependencies Libraries use array if none, version false, media 
 	*/
 	wp_enqueue_style( 'bootstrap_css' );
+	wp_register_style( 'main', get_template_directory_uri(  ). '/css/main.css', array(  ), false, 'all' );
+	wp_enqueue_style( 'main' );
 }
 
 add_action( 'wp_enqueue_scripts', 'load_css' ); 	// Hook the load_css function ( be on website or run )
+
+/*
+ * Loading Scripts
+ * */
 
 function load_js(  )	// Loading bootstrap Styles
 { 
@@ -25,4 +34,19 @@ function load_js(  )	// Loading bootstrap Styles
 
 add_action( 'wp_enqueue_scripts', 'load_js' ); 	// Hook the load_js function ( be on website or run )
 
+/*
+ * Theme Options
+ * */
+
+add_theme_support( 'menus' );
+
+/*
+ * Menus
+ * */
+register_nav_menus( 
+	array( 
+		'top-menu' => 'Top Menu Location',
+		'mobile-menu' => 'Mobile Menu Location'
+	)
+);
 ?>
