@@ -69,4 +69,14 @@ header .top-bar .menu-item-has-children .sub-menu > .menu-item-has-children:hove
 header .top-bar .sub-menu li .sub-menu{ 
 	left: 100%;
 	top: 0;
+}blog-large
+
+.tags{ 
+	margin-top: .5em;
+	display: flex;
+}
+
+.tags a{ 
+	padding: .25em 1em;
+	margin: 0 .25em;
 }
