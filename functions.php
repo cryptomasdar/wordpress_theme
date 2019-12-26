@@ -81,4 +81,41 @@ function my_sidebars(  ){
 } 
 
 add_action( 'widgets_init', 'my_sidebars' );
+
+
+/*
+ * Custom Post Type
+ * */
+
+function cars_post_type(  )
+{ 
+	$args = array( 
+		'labels' => array( 'name' => 'Cars', 'singular_name', 'Car' ),
+		'hierrachical' => true,
+		'public' => true,
+		'menu_icon' =>'dashicons-welcome-view-site',
+		'has_archive' => true,
+		'supports' => array( 'title', 'editor', 'thumbnail' )
+   	);
+
+	register_post_type( 'cars', $args );
+}
+
+add_action( 'init', 'cars_post_type' );
+
+/*
+ * Taxonomy
+ * */
+
+function cars_taxonomy(  )
+{ 
+	$args = array( 
+		'labels' => array( 'name' => 'Brands', 'singular_name' => 'Brand' ),
+		'public' => true,
+		'hierrachical', true
+   	);
+	register_taxonomy( 'brands', array( 'cars' ), $args );
+}
+
+add_action( 'init', 'cars_taxonomy' );
 ?>
