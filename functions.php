@@ -95,7 +95,7 @@ function cars_post_type(  )
 		'public' => true,
 		'menu_icon' =>'dashicons-welcome-view-site',
 		'has_archive' => true,
-		'supports' => array( 'title', 'editor', 'thumbnail' )
+		'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' )
    	);
 
 	register_post_type( 'cars', $args );
